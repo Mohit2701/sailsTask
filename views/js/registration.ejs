@@ -1,0 +1,93 @@
+<script>
+  function registration() {
+      var form = $("#registration_form")[0];
+      var formData = new FormData(form);
+      $.ajax({
+        url: "/register",
+        method: "post",
+        processData: false,
+        contentType: false,
+        data: formData,
+        success: function (data) {
+          console.log(data);
+          if (data.error) {
+            bootbox.alert(data.error);
+          } else {
+            window.location.assign("/login");
+          }
+        },
+      });
+    }
+    $(document).ready(function () {
+    
+
+
+      $("#registration_form").validate({
+        rules: {
+          FirstName: {
+            required: true,
+          },
+          LastName: {
+            required: true,
+          },
+          email: {
+            required: true,
+          },
+          password: {
+            required: true,
+            minlength: 6,
+          },
+          employeeID: {
+            required: true,
+            minlength: 4,
+          },
+          Organization: {
+            required: true,
+            minlength: 3,
+          }
+        },
+
+        messages: {
+
+          FirstName: {
+            required: 'The FirstName is required',
+          },
+          LastName: {
+            required: 'The LastName is required',
+          },
+          email: {
+            required: 'The Email is required',
+          },
+          password: {
+            required: 'The Password is required',
+            minlength: "Password should be 6 digit",
+          },
+          employeeID: {
+            required: 'The Employee ID is required',
+            minlength: "EmployeeID should be  4 digit",
+          },
+          Organization: {
+            required: 'The Organization is required',
+            minlength: "Organization should be  3 digit",
+          }
+
+        },
+
+
+        submitHandler: function (form) {
+          registration();
+          /* var number = /([0-9])/;
+          var alphabets = /([a-zA-Z])/;
+          var special_characters = /([~,!,@,#,$,%,^,&,*,-,_,+,=,?,>,<])/;
+          if (($('#password').val().match(number) && $('#password').val().match(alphabets) && $('#password').val().match(special_characters))) {
+           
+          } else {
+            bootbox.alert('password is not correct plz use atleats 1 number 1 charecter and 1 symbol')
+          } */
+        }
+      });
+    });
+
+  
+
+</script>

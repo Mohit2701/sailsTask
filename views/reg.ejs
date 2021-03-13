@@ -1,0 +1,38 @@
+
+<%- partial('js/registration') %>
+<div class="container">
+
+    <form id="registration_form" enctype="multipart/form-data">
+       
+        <div class="form-group">
+            <label for="FirstName">First Name</label>
+            <input type="text" class="form-control" id="FirstName" name="FirstName" placeholder="Enter First Name">
+        </div>
+
+        <div class="form-group">
+            <label for="LastName">Last Name</label>
+            <input type="text" class="form-control" id="LastName" name="LastName" placeholder="Enter Last Name">
+        </div>
+        <div class="form-group">
+            <label for="email">Email ID</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control"  id="password" name="password" placeholder="Password">
+        </div>
+        
+        <div class="form-group">
+            <label for="employeeID">Employee ID</label>
+            <input type="text" class="form-control" id="employeeID" name="employeeID">
+        </div>
+        <div class="form-group">
+            <label for="Organization">Organization Name</label>
+            <input type="text" class="form-control" id="Organization" name="Organization">
+
+        </div>
+        
+
+        <button id="save" class="btn btn-primary">Save</button>
+    </form>
+</div>

@@ -1,0 +1,54 @@
+<script>
+  function login() {
+      var form = $("#loginForm")[0];
+      var formData = new FormData(form);
+
+      $.ajax({
+        url:"/login",
+       
+        method: "post",
+        processData: false,
+        contentType: false,
+        data: formData,
+        success: function (data) {
+          console.log(data)
+          if (data.loginError) {
+            bootbox.alert(data.loginError);
+          }
+          else {
+              window.location.assign("/dashboard");
+          }
+        },
+      });
+    }
+    $(document).ready(function () {
+     
+      $("#loginForm").validate({
+        rules: {
+
+          email: {
+            required: true,
+          },
+          password: {
+            required: true,
+            minlength: 6,
+          },
+
+        },
+        messages: {
+
+          email: {
+            required: 'The email is required',
+          },
+          password: {
+            required: 'The password is required',
+
+          },
+
+        },
+        submitHandler: function (form) {
+          login();
+        }
+      });
+    });
+</script>
