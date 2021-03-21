@@ -35,14 +35,21 @@ module.exports.routes = {
   /* '/': {
     view: 'client'
   } */
-  'GET /': 'AuthController.show',
-  'POST /register': 'AuthController.register',
+  'GET /product/:currency': 'DashboardController.show',
+  'GET /product/:currency/:id': 'DashboardController.show',
+  'GET /mostView/:currency': 'DashboardController.mostView',
+  'POST /create': 'DashboardController.create',
+  'POST /delete': 'DashboardController.delete',
+  /* 'POST /register': 'AuthController.register',
   'GET /login': 'AuthController.loginShow',
   'POST /login': 'AuthController.login',
   'GET /logout': 'AuthController.logout',
  
   'GET /dashboard': 'DashboardController.show',
-  
+
+
+  'GET /time': 'DashboardController.Time',
+  'POST /create': 'DashboardController.create', */
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *

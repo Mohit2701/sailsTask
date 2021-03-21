@@ -65,9 +65,11 @@ module.exports.connections = {
     connectionLimit: 5,
     waitForConnections: false,
     password: '', //optional
-    database: 'Antarctica' //optional
+    database: 'task1' //optional
   },
 
+  
+ 
   /***************************************************************************
    *                                                                          *
    * PostgreSQL is another officially supported relational database.          *

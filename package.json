@@ -26,9 +26,11 @@
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "rc": "1.0.1",
+    "requests": "^0.3.0",
     "sails": "^0.12.14",
-    "sails-disk": "~0.10.9",
+    "sails-disk": "^2.1.0",
     "sails-hook-flash": "^0.2.2",
+    "sails-mongo": "^0.11.4",
     "sails-mysql": "^0.11.5",
     "skipper": "^0.8.7"
   },

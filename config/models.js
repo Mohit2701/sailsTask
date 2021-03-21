@@ -34,8 +34,8 @@ module.exports.models = {
   attributes: {
     createdAt: { type: 'datetime', autoCreatedAt: true},
     updatedAt: { type: 'datetime', autoUpdatedAt: true},
-     /* id: { type: 'integer',primaryKey:true,autoIncrement:true}, */
+     id: { type: 'integer',primaryKey:true,autoIncrement:true},
   },
-  migrate: 'alter'
+  migrate: 'safe'
 
 };

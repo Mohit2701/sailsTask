@@ -36,17 +36,20 @@ passport.use(new LocalStrategy({
       }
      
       bcrypt.compare(password, user.Password, function (err, res) {
-        if (err)
+        if (err){
           return done(null, false, {
             message: 'Invailid password!'
           });
+        } 
         let existingUser = {};
-       
+
         existingUser.id = user.UserId;
-        
+
         return done(null, existingUser, {
           message: 'Logged In Successfully'
         });
+          
+        
       });
     });
   }
